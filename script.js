@@ -1,13 +1,21 @@
+// Grade Calculation Logic
+
 function getGrade(marks) {
-    if (marks >= 90) {
+    if (marks <= 100 && marks >= 90) {
         return "A";
-    } else if (marks >= 80) {
+    } else if (marks <= 89 && marks >= 80) {
         return "B";
-    } else if (marks >= 70) {
+    } else if (marks <= 79 && marks >= 70) {
         return "C";
-    } else if (marks >= 60) {
+    } else if (marks <= 69 && marks >= 60) {
         return "D";
-    } else {
+    }
+    // Handle invalid marks
+    else if (marks < 0 || marks > 100) {
+        return "Invalid marks";
+    }
+    // Assign grade F if marks are less than 60
+    else {
         return "F";
     }
 }
